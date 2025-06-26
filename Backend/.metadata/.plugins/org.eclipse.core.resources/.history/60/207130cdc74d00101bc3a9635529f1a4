@@ -1,0 +1,7 @@
+package com.shopy.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Long, ID>{
+
+}

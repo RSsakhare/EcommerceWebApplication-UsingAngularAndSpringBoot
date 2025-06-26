@@ -1,0 +1,59 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <h1>Shop With Style</h1>
+
+        <div>
+             <mat-form-field class="w-full">
+
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" required placeholder="Enter your First Name" firstName>
+
+                <mat-error *ngIf="loginForm.controls['firstName'].hasError('required')">First Name Is required</mat-error>
+                
+
+            </mat-form-field>
+
+             <mat-form-field class="w-full">
+
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" required placeholder="Enter your Last Name" lastName>
+
+                <mat-error *ngIf="loginForm.controls['lastName'].hasError('required')">Last Name Is required</mat-error>
+                
+
+            </mat-form-field>
+
+            <mat-form-field class="w-full">
+
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required placeholder="Enter your email" title="Email">
+
+                <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email Is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['email'].hasError('email')">Please enter a valid email Address</mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field class="w-full">
+
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" required password placeholder="Enter your password" title="password">
+
+                <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password Is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">Password should be at least 8 characters long</mat-error>
+
+            </mat-form-field>
+
+            <div>
+                <button type="submit" style="padding: 1.7rem" mat-raised-button class="w-full" color="accent">
+                    REGISTER
+                </button>
+            </div>
+            <div class="pt-5">
+                <span>if you don't have account ?</span>
+                <button mat-button color="accent" (click)="changeTemplate()">
+                    LOGIN
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

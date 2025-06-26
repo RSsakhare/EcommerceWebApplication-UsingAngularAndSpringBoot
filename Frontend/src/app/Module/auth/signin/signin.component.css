@@ -1,0 +1,10 @@
+form{
+    background: black;
+    border-radius: 0.4rem;
+}
+
+.container{
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+}

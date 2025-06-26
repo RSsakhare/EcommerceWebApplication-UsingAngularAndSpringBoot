@@ -1,0 +1,5 @@
+package com.shopy.exception;
+
+public class RazorpayException extends Exception {
+
+}

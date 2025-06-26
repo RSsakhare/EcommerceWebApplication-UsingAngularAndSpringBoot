@@ -1,0 +1,62 @@
+<div class="fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800 ">
+
+    <div class="px-5 lg:px-20 flex h-16 item-center ">
+
+        <div class="flex item-center">
+            <div class="mr-5">
+                <img class="w-8" src="favicon.ico" alt="code with me" >
+            </div>
+        </div>
+
+        <div class="">
+
+            <div class="flex item-center space-x-4">
+                <a routerLink="/" class="text-gray-800 font-semibold text-lg">
+                    Shop With Style
+                 </a>
+                 <div>
+                        <button class="open-button" (click)="openNavbarContent('men')" mat-button>Men</button>
+                 </div>
+                 <div>
+                        <button class="open-button" (click)="openNavbarContent('women')" mat-button>Women</button>
+                 </div>
+                 </div>
+            </div>
+        </div>
+
+
+        <div class="flex item-center">
+            <button (click)="navigateTo('Cart')" mat-icon-button>
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+            <button *ngIf="false" mat-raised-button type="" color="accent">
+                LOGIN
+            </button>
+            <div (click)="handleOpenLoginModal()" *ngIf="true" class="relative ml-3 flex item-center">
+                <div class="flex item-center space-x-5">
+                    <span class="font-bold text-lg">{{userProfile.firstName}}</span>
+                    <button mat-button [matMenuTriggerFor]="profileMenu" class="flex item-center">
+                        <img  class="h-7 w-7" src="https://cdn.pixabay.com/photo/2024/10/04/15/22/ai-generated-9096732_1280.jpg" alt="">
+                    </button>
+
+                    <mat-menu #profileMenu="matMenu">
+                        <button mat-menu-item >Profile</button>
+                        <button (click)="navigateTo('account/orders')" mat-menu-item >Orders</button>
+                        <button mat-menu-item (click)="handleLogout()">Logout</button>
+                    </mat-menu>
+
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="isNavbarContentOpen" class="model-container absolute right-0 left-0">
+
+        <app-nav-content [selectedSection]="currentSection"/>
+
+    </div>
+    </div>
+    
+    
+
+
+

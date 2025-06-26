@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h2>Admin Products</h2>
+  <button class="btn btn-primary mb-3" routerLink="/admin/create-product">Add New Product</button>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <img *ngIf="product.imageUrl" [src]="product.imageUrl" alt="Product Image" width="60">
+        </td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="editProduct(product)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteProduct(product)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="products.length === 0">
+        <td colspan="7" class="text-center">No products found.</td>
+      </tr>
+    </tbody>
+  </table>

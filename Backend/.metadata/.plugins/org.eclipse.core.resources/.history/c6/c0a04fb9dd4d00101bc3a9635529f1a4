@@ -1,0 +1,16 @@
+package com.shopy.service;
+
+import com.shopy.model.OrderItem;
+import com.shopy.repository.OrderItemRepository;
+
+public class OrderItemServiceImplementation implements OrderItemService{
+
+	private OrderItemRepository orderItemRepository;
+	
+	@Override
+	public OrderItem createOrderItem(OrderItem orderItem) {
+		
+		return orderItemRepository.save(orderItem);
+	}
+
+}

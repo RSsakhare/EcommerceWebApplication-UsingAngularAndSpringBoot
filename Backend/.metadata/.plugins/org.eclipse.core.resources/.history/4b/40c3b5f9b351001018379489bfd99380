@@ -1,0 +1,5 @@
+package com.shopy.response;
+
+public class PaymentLinkResponse {
+
+}

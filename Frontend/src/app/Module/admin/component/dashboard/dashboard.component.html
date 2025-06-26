@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <h2>Admin Dashboard</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let card of cards">
+      <div class="card" [ngClass]="card.bgClass">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a [routerLink]="card.link" class="btn btn-light">View {{ card.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Orders</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.id }}</td>
+        <td>{{ order.customer }}</td>
+        <td>{{ order.date | date:'shortDate' }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.total | currency }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-2" (click)="viewOrder(order)">View</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteOrder(order)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="orders.length === 0">
+        <td colspan="7" class="text-center">No orders found.</td>
+      </tr>
+    </tbody>
+  </table>
